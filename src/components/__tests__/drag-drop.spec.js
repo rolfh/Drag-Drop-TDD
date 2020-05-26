@@ -113,7 +113,7 @@ describe('drag-drop.vue', () => {
 			},
 		])
 	})
-	it('can re-arrange item from 2rd to 3nd', async () => {
+	it('can re-arrange item from 2nd to 3rd', async () => {
 		const wrapper = shallowMount(dragDrop, {
 			propsData: {
 				theList,
