@@ -26,23 +26,21 @@ export default {
 			let fromItem = list.find((item) => item.pos == from)
 
 			if (from > to) {
-				let itemsToIncrement = list.filter((item) => {
-					return item.pos < from && item.pos >= to
-				})
-				itemsToIncrement = itemsToIncrement.map((item) => {
-					item.pos++
-					return item
-				})
-				itemsToIncrement
+				list
+					.filter((item) => {
+						return item.pos < from && item.pos >= to
+					})
+					.forEach((item) => {
+						item.pos++
+					})
 			} else {
-				let itemsToDecrement = list.filter((item) => {
-					return item.pos > from && item.pos <= to
-				})
-				itemsToDecrement = itemsToDecrement.map((item) => {
-					item.pos--
-					return item
-				})
-				itemsToDecrement
+				list
+					.filter((item) => {
+						return item.pos > from && item.pos <= to
+					})
+					.forEach((item) => {
+						item.pos--
+					})
 			}
 			fromItem.pos = to
 		},
